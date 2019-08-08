@@ -1,0 +1,36 @@
+
+PingBots Notes
+
+
+PingBots-deploy
+
+ec2-3-220-105-55.compute-1.amazonaws.com
+ip: 3.220.105.55
+
+PingBots VM1
+
+ec2-3-220-166-56.compute-1.amazonaws.com
+ip: 3.220.166.56
+
+PingBots VM2
+
+ec2-54-163-186-21.compute-1.amazonaws.com
+ip: 54.163.186.21
+
+PingBots-testing
+
+ec2-3-223-249-193.compute-1.amazonaws.com
+ip: 3-223-249-193
+
+For all 4 servers
+user: ec2-user
+key login password: Lms@12345
+direct login password: PingBots.12345
+
+
+SSL cert create;
+sudo yum install mod_ssl openssl
+sudo openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout pingbots.likeminds.com.key -out pingbots.likeminds.com.crt
+
+Cert created with .pkcs12 format
+openssl pkcs12 -inkey pingbots.likeminds.com.key -in pingbots.likeminds.com.crt -export -out pingbots.likeminds.com.pkcs12
